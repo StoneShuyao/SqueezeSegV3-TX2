@@ -1,0 +1,7 @@
+data/
+model/
+output/
+sample_output/
+lidar/
+*.bin
+**__pycache__**
