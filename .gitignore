@@ -3,6 +3,6 @@ output/
 sample_output/
 lidar/
 *.bin
-**__pycache__**
 .idea
-/__pycache__/
+__pycache__/
+**__pycache__**
