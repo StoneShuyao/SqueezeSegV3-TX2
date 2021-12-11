@@ -28,7 +28,8 @@ class SemanticKitti(Dataset):
                max_points=150000,   # max number of points present in dataset
                gt=True):            # send ground truth?
     # save deats
-    self.root = os.path.join(root, "sequences")
+    # self.root = os.path.join(root, "sequences")
+    self.root = root
     self.sequences = sequences
     self.labels = labels
     self.color_map = color_map
@@ -83,8 +84,11 @@ class SemanticKitti(Dataset):
       print("parsing seq {}".format(seq))
 
       # get paths for each
-      scan_path = os.path.join(self.root, seq, "velodyne")
-      label_path = os.path.join(self.root, seq, "labels")
+      #scan_path = os.path.join(self.root, seq, "velodyne")
+      #label_path = os.path.join(self.root, seq, "labels")
+
+      scan_path = self.root
+      label_path = self.root
 
       # get files
       scan_files = [os.path.join(dp, f) for dp, dn, fn in os.walk(
@@ -93,8 +97,8 @@ class SemanticKitti(Dataset):
           os.path.expanduser(label_path)) for f in fn if is_label(f)]
 
       # check all scans have labels
-      if self.gt:
-        assert(len(scan_files) == len(label_files))
+      # if self.gt:
+      #   assert(len(scan_files) == len(label_files))
 
       # extend list
       self.scan_files.extend(scan_files)
