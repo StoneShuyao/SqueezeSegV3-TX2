@@ -98,7 +98,7 @@ class User():
         p_y = p_y[0, :npoints]
         proj_range = proj_range[0, :npoints]
         unproj_range = unproj_range[0, :npoints]
-        path_seq = path_seq[0]
+        path_seq = path_seq[-1]
         path_name = path_name[0]
 
         if self.gpu:
