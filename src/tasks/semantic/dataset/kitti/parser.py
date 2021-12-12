@@ -87,8 +87,8 @@ class SemanticKitti(Dataset):
       #scan_path = os.path.join(self.root, seq, "velodyne")
       #label_path = os.path.join(self.root, seq, "labels")
 
-      scan_path = os.path.join(self.root, seq)
-      label_path = os.path.join(self.root, seq)
+      scan_path = os.path.join(self.root, seq, seq, "pcd")
+      label_path = os.path.join(self.root, seq, "labels")
 
       # get files
       scan_files = [os.path.join(dp, f) for dp, dn, fn in os.walk(
